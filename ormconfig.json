@@ -1,0 +1,22 @@
+{
+    "name": "serverlessApi",
+    "type": "postgres",
+    "host": "0.tcp.sa.ngrok.io",
+    "port": 19648,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "dev_test",
+    "entities": ["./src/entity/*.ts"],
+    "logging": true,
+    "synchronize": true,
+    "migrations": [
+       "./src/migrations/*.ts"
+    ],
+    "subscribers": [
+       "./src/subscriber/**/*.ts"
+    ],
+    "cli": {
+       "entitiesDir": "./src/entity",
+       "migrationsDir": "./src/migrations"
+    }
+  }
