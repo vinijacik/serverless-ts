@@ -16,15 +16,5 @@ export default {
   },
   required: [
     "fullName",
-    "email",
-    "birthDate",
-    "cpf",
-    "cep",
-    "address",
-    "addressNumber",
-    "district",
-    "city",
-    "state",
-    "country",
   ],
 } as const;

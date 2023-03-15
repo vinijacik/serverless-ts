@@ -12,28 +12,33 @@ export default class Client {
 
   @Column("varchar", {
     unique: true,
-    length: 255
+    length: 255,
+    nullable: true
   })
   email: string;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
+    nullable: true
   })
   birthDate: Date;
 
   @Column("varchar", {
     unique: true,
-    length: 11
+    length: 11,
+    nullable: true
   })
   cpf: string;
 
   @Column("varchar", {
-    length: 8
+    length: 8,
+    nullable: true
   })
   cep: string;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
+    nullable: true
   })
   address: string;
 
@@ -41,22 +46,26 @@ export default class Client {
   addressNumber: number;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
+    nullable: true
   })
   district: string;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
+    nullable: true
   })
   city: string;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
+    nullable: true
   })
   state: string;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
+    nullable: true
   })
   country: string;
 
