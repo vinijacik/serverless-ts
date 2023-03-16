@@ -15,6 +15,7 @@ const _create: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
 
     return formatJSONResponse(200, result);
   } catch (e) {
+    console.log(e);
     return formatJSONResponse(400, { error: e.detail });
   }
 };

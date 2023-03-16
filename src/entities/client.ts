@@ -1,4 +1,11 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import {
+  BeforeInsert,
+  BeforeSoftRemove,
+  BeforeUpdate,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity("client")
 export default class Client {
@@ -6,39 +13,39 @@ export default class Client {
   id: number;
 
   @Column("varchar", {
-    length: 255
+    length: 255,
   })
   fullName: string;
 
   @Column("varchar", {
     unique: true,
     length: 255,
-    nullable: true
+    nullable: true,
   })
   email: string;
 
   @Column("varchar", {
     length: 255,
-    nullable: true
+    nullable: true,
   })
   birthDate: Date;
 
   @Column("varchar", {
     unique: true,
     length: 11,
-    nullable: true
+    nullable: true,
   })
   cpf: string;
 
   @Column("varchar", {
     length: 8,
-    nullable: true
+    nullable: true,
   })
   cep: string;
 
   @Column("varchar", {
     length: 255,
-    nullable: true
+    nullable: true,
   })
   address: string;
 
@@ -47,40 +54,55 @@ export default class Client {
 
   @Column("varchar", {
     length: 255,
-    nullable: true
+    nullable: true,
   })
   district: string;
 
   @Column("varchar", {
     length: 255,
-    nullable: true
+    nullable: true,
   })
   city: string;
 
   @Column("varchar", {
     length: 255,
-    nullable: true
+    nullable: true,
   })
   state: string;
 
   @Column("varchar", {
     length: 255,
-    nullable: true
+    nullable: true,
   })
   country: string;
 
   @Column("varchar", {
     nullable: true,
-    length: 255
+    length: 255,
   })
   addressComplement: string;
 
-  @CreateDateColumn()
-  createdAt: Date;
+  @Column({ type: "timestamp" })
+  created_at: Date;
 
-  @UpdateDateColumn()
-  updatedAt: Date;
+  @Column({ type: "timestamp" })
+  updated_at: Date;
 
-  @DeleteDateColumn()
-  deletedAt: Date;
+  @Column({ type: "timestamp", default: null })
+  deleted_at: Date;
+
+  @BeforeInsert()
+  beforeInsert() {
+    this.created_at = new Date();
+  }
+
+  @BeforeUpdate()
+  beforeUpdate() {
+    this.updated_at = new Date();
+  }
+
+  @BeforeSoftRemove()
+  beforeRemove() {
+    this.deleted_at = new Date();
+  }
 }

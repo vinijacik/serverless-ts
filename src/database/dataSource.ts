@@ -1,6 +1,6 @@
-import { client1675398121029 } from "src/migrations/1675398121029-client";
 import { DataSource } from "typeorm";
 import { default as entities } from "../entities";
+import { client1678969115034 } from "src/migrations/1678969115034-client";
 
 export const dataSource = new DataSource({
       applicationName: "serverlessApi",
@@ -16,5 +16,5 @@ export const dataSource = new DataSource({
       logging: false,
       useUTC: true,
       entities,
-      migrations: [client1675398121029]
+      migrations: [client1678969115034]
     });
