@@ -7,6 +7,9 @@ export default {
       http: {
         method: "delete",
         path: "client/{id}",
+        cors: {
+          origin: "*",
+        },
       },
     },
   ],

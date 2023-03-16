@@ -7,6 +7,9 @@ export default {
       http: {
         method: "get",
         path: "client/{id}",
+        cors: {
+          origin: "*",
+        },
       },
     },
   ],

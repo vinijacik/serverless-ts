@@ -6,6 +6,9 @@ export default {
       http: {
         method: "get",
         path: "healthCheck",
+        cors: {
+          origin: "*",
+        },
       },
     },
   ],
