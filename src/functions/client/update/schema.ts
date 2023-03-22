@@ -7,7 +7,7 @@ export default {
       cpf: { type: "string" },
       cep: { type: "string" },
       address: { type: "string" },
-      addressNumber: { type: "string" },
+      addressNumber: { type: "number" },
       district: { type: "string" },
       city: { type: "string" },
       state: { type: "string" },

@@ -7,7 +7,7 @@ export const dataSource = new DataSource({
       type: "postgres",
       host: "0.tcp.sa.ngrok.io",
       port: 19648,
-      database: "dev_test",
+      database: "dev_test2",
       username: "postgres",
       password: "postgres",
       schema: "public",

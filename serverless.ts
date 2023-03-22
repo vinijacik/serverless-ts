@@ -1,11 +1,11 @@
 import type { AWS } from '@serverless/typescript';
 
 import healthCheck from '@functions/healthCheck';
-import create from '@functions/create';
-import list from '@functions/list';
-import update from '@functions/update';
-import del from '@functions/del';
-import get from '@functions/get';
+import create from '@functions/client/create';
+import list from '@functions/client/list';
+import update from '@functions/client/update';
+import del from '@functions/client/del';
+import get from '@functions/client/get';
 
 const serverlessConfiguration: AWS = {
   service: 'serverlessApi',

@@ -49,7 +49,7 @@ export default class Client {
   })
   address: string;
 
-  @Column("int")
+  @Column("int", { nullable: true })
   addressNumber: number;
 
   @Column("varchar", {
@@ -83,26 +83,27 @@ export default class Client {
   addressComplement: string;
 
   @Column({ type: "timestamp" })
-  created_at: Date;
+  created_at: number;
 
   @Column({ type: "timestamp" })
-  updated_at: Date;
+  updated_at: number;
 
   @Column({ type: "timestamp", default: null })
-  deleted_at: Date;
+  deleted_at: number | null;
 
   @BeforeInsert()
   beforeInsert() {
-    this.created_at = new Date();
+    this.created_at = Date.now();
+    this.updated_at = Date.now();
   }
 
   @BeforeUpdate()
   beforeUpdate() {
-    this.updated_at = new Date();
+    this.updated_at = Date.now();
   }
 
   @BeforeSoftRemove()
   beforeRemove() {
-    this.deleted_at = new Date();
+    this.deleted_at = Date.now();
   }
 }
